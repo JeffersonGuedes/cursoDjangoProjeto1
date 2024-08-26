@@ -1,17 +1,11 @@
+{% extends 'global/base.html' %}
 
-{% include 'home/partials/head.html' %}
-<body>
-  {% include 'home/partials/header.html' %}
-  {% include 'home/partials/search.html' %}
+{% block title%}HOME | {% endblock title%}
 
-  <main class="main-content-container">
-    <div class="main-content main-content-list container">
+{% block content %}
+  <div class="main-content main-content-list container">
+    {% for recipe in recipes %}
       {% include 'home/partials/recipe.html' %}
-      {% include 'home/partials/recipe.html' %}
-      
-      
-    </div>
-  </main>
-
-  {% include 'home/partials/footer.html' %}
-</body>
+    {% endfor %}
+  </div>
+{% endblock content %}
